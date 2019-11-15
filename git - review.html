@@ -1,0 +1,188 @@
+Local Repository using git and verson control
+
+1. 먼저 새로운 프로젝트 폴더를 만든다
+2. 그안에 아무 내용이 들어가있는 텍스트를 생성한다.
+3. So now let's create a git local repository and start tracking some of these file changes
+so to initialize git we simply write git init.
+"git init"을 치면 .git폴더가 나오는데 이건 hidden file이라 탐색기나, ls하면 보이지않는다 하지만 "ls -a" 하면 보인다
+그리고 .git이 하는일은: it's going to be used to track all your changes to commit your changes and to perform version control.
+So as I mentioned before using git and learning about version control it comes with some of its own terminology
+and language.
+And here in order just start tracking the changes of my files.
+For example chapter 1 text.
+Then I need to add this file to what's called a staging area.
+And that is basically a intermediate place where you can pick and choose which files
+inside your working directory(=story directory) that you want to commit.
+So to see what's currently inside your staging area you can use the 4. "git status" command and it shows
+you that there are untracked files which will be shown in red and this is something that simply
+inside your working directory.
+But it's not yet in the staging area.
+So in order to add it to the staging area and to start tracking changes in it then we have to use the
+command 5. "git add chapter1.txt"그리고 다시 "git status"를 해보면 chapter1.txt가 staging area에 적용되어있을것이다.
+<!-- git add . 을하면 그폴더 안에 있는거 한번에 add 된다 -->
+So this is now in the staging area and it's ready to be committed.
+So that's go ahead and commit this under version control.
+6. "git commit -m 'commit message' "(맨 처음에 만드는게 starting point) >> git commit -m "Complete Chapter 1"
+so the commit message is really really important.
+it's something that helps you keep track of what changes you have made in each commit.
+so when you create a new save point you want to be as explicit as possible about what changes were made
+between the last save point and this current save point.
+Now the thing that you'll realize is that usually with commit messages they are written in the present
+tense and this is the best practice.
+It's actually by convention that you should always use the present tense.
+So let's go ahead and hit enter to make our first commit
+<!-- commit 중에 생긴 오류: git: fatal unable to auto-detect email address 해결방법 -->
+<!-- git config --global user.email "yhsdevelop2551@gmail.com" -->
+and you can see what commits you have made by using the "git log" command.
+So you can see that this commit was made at this time by this person.
+And it also has a hash and this hash uniquely identifies this particular commit
+and then right at the end you see this commit message of what this save point was all about.
+<!-- Head -> Master 설명 아마 Head 기준 -->
+And this is where we are at right now.
+So you can see by the head This is the position or the current state that we are in.
+<!-- 지금까지 했던거 정리해보자 -->
+So we created a file in our working directory inside our story directory.
+So the working directory is the folder or the directory where you initialize your get repository.
+When we said git init we did that inside the story directory.
+So that becomes a working directory.
+And from now on it is going to try and track the changes
+that it sees between the working directory and the Local Repository.
+So in the beginning we created a file inside our working directory inside story
+and then we used it to add to push it to the staging area.
+Now the reason why there is this intermediate staging area
+because you might wonder why not just go from the working directory straight to the Local Repository.
+Why do we need this extra step.
+Well sometimes you might not want to add all of your files to be tracked
+or all of your files to be committed.
+So the staging area is a good place to try and figure out what are the things that you want git to ignore.
+And what are the things that you want to be tracked.
+So once we've used it and we've put our file into the staging area
+and we're happy with the changes that we are going to commit
+then the next step is to go ahead and committed using the git commit command.
+So now our file is inside our Local Repository so that .git directory and that version is given a name through
+the commit message.
+So that means that even if we've messed up our file at working directory(story)
+we can still use the last version that's under version control
+and we can use a special command called Git checkout to revert back or rollback
+to the last position in our local repository.
+<!-- git add "파일" 하면 그 순간부터 그 파일을 수정하고 git status하면 수정되었다고 알려준다
+    즉 staging area에 들어가는순간부터 수정되면 수정되었다고 알려준다. git status를 통해
+ -->
+ <!-- 하지만 내가 파일을 messed up 해놨을때 그 파일을 git add하거나 git commit 하면 last version으로 돌아가지지 않는다 주의하자 -->
+So at this point you can use get status to see that we have modifications in our chapter3.txt(textfile)
+that have not yet been committed or added to the staging area.
+<!-- git checkout 하기전에 git diff(difference) 파일명 으로 현재 내가 수정한 파일내용과
+git Local Repository에서 가지고있는 파일내용을 비교한다
+그후에 git checkout 파일명 으로 롤백한다 -->
+
+<!-- remote repository -->
+So a repository that's hosted on somebody else's server or somebody else's computer by using github.
+<!-- 회원가입후 new repository할때 -->
+public that means that anyone can see all of the files inside your save repository.
+So everything that you commit to your remote repository or to your github repository will be public.
+So if you don't want that then you can select private which requires a subscription on github.
+But in most cases if you're not doing anything that's top secret or if you're not developing technology
+that is completely brand new then having a public repository is not such a big problem.
+And on the other hand as well you can see loads of other people's public repository and you can see
+for example how they structure that code.
+What is their style.
+And you can see how people do things.
+so this beauty of open source code.
+And as you develop in your journey of becoming a developer then you might find that you want to contribute
+to other open source projects.
+Help them out a bit and work in a virtual team to try and contribute your knowledge and your programming
+skills.
+I'm not going to initialize a read me from my repository just yet.
+So now you can see that there are two ways that they tell you you can set up your repository.
+You can either set it up in github for Mac on desktop that desktop client which I am not a big fan of.
+But instead what we're going to do is we're going to use the command line instructions to set up our repository.
+So we are going to push an existing repository that we've got locally onto this remote repository
+and to do that we need to copy the address of all github repository. >> 위에 주소부분 복사
+And we're going to use these two lines of code in order to transfer or push our existing local repository
+from the command line. >> or push 밑에 2줄을 커맨드라인에 작성한다
+And I would like to push both of these commits(git log에서 나온 두개의 commit을 말함) onto github.
+So to do that the first thing is creating a remote so it's telling that I've created
+a remote repository somewhere on the Internet and I want to transfer all of my commits
+"명령어: git remote add origin https://github.com/Yhsdeveloper/Story.git"
+Now origin is simply the name of your remote and you can theoretically call it anything you want.
+But by convention and it's highly recommended that you simply keep the name origin and the reason is
+because most programs are used to the conventional naming and that means it will be much easier for
+them to understand what's going on in your projects when they have a look at it
+instead of you doing something completely different which will be very surprising and will be a lot harder for people to
+understand what's going on.
+and then we're going to go ahead and hit enter.
+And now that remote is created so we can push a local repository onto our remote repository which is called origin.
+"명령어 git push -u origin master" // master는 Branch의 이름
+And what this line of code does is that it pushes your local repository to the remote repository using
+the u flag or the u option which basically links up your remote repository on your local repositories and then
+we're going to push it towards the remote that's called origin and we're going to push it to the branch that's called Master.
+So the master branch is simply the default branch or the main branch of all of your commits.
+we're going to push a local repository onto this origin remote and we're going to push it to the master branch
+So let's go ahead and hit enter.
+and there's going to be a little bit of work being done in the background
+because it's actually going to have to upload your local repository to the remote repository on get hub servers
+and depending on the size of your local repository this can take various amounts of time.
+So the flashing cursor or the dollar sign that means our push is successful.
+그후 다시 github에 가서 새로고침하면 깃허브에 올라가있는걸 볼수있다(remote repository)
+그리고 insights network에 가면 자세히 볼수있다
+<!-- 커밋해서 git log하면 보이는데 local repository에 master이름을 가진 branch지점에 commit한걸 모아두는것이다. 밑에 설명 -->
+once you've done a few commits then you actually have this timeline of various commits.
+And this is called your master branch.
+So the master brunch is your main branch of commits or save points and it is sequential.
+And this is usually where your main progress is saved or committed.
+you can also sync(동기화하다,연결하다,잇다) them or push things from your local repository to your remote repository.
+So in our case the local repository is the .git directory that we've got inside our story directory
+and theremote repository is github which hosts our code
+and also host all of the changes that were made in between the different committees.
+(all ~ committees는 local repository에 등록된 파일들을 말함.)
+
+<!-- GitHub Private Repository are now Free! ?
+https://techcrunch.com/2019/01/07/github-free-users-now-get-unlimited-private-repositories/ 확인 -->
+
+<!-- git ignore -->
+So a really common example that people tend to add to their git ignored files are what are called DS_store files
+so DS_store files are basically a setting's file that saves certain things >> DS Store file은 ls -a하면 보인다 하지만 이건 맥에서만 제공해주는것 같고 윈도우에선 없다.
+<!-- 암튼 git ignore 연습하는방법 -->
+새로운 프로젝트 폴더를 만든다.
+그 안에 여러개의 파일을 만들고, .gitignore 파일이랑 secrets.txt를 만든다 여기서 secrets.txt를 commit하길 원하지않는다
+git add . 로 staging area에 넣어본다
+git status로 확인한다
+다시 모든파일을 staging area에서 빼낸다 명령어 >> git rm --cached -r(recursive) .(현재 폴더안에 있는거 모두)
+git rm --cached -r .
+git status로 다시 확인해본다
+<!-- staging area에 등록 안되게 하는방법 -->
+.gitignore 파일에서
+you can simply specify the file name on each and every new line.
+예를들어 .gitignore 파일에서 secrets.txt를 추가해준다
+그후 git add . 다시 해보고 git status로 확인해보면 secrets.txt는 staging area에 들어가 있지않을걸 볼수있다
+그리고 git commit -m(message) "내용" 하면 secrets.txt 파일 빼고 local repository에 저장된다.
+<!-- .gitignore에서의 규칙 -->
+Now with gitignore it has certain rules.
+So for example you can use the pound sign to comment. # >> 주석
+Another thing you can do is use wildcards.So if you use the asterisks.
+*.txt >> that means when you commit your project all of the files that have a text extension will be ignored.
+<!-- https://github.com/github/gitignore 에 가면  -->
+So this is a repository owned by the github team.
+They have a repository called gitignore
+And it's basically a pre-made collection of useful gitignore templates.
+so *pre-built template for some of the files that you probably won't want to upload to github or any other remote repository.*
+it will ignore all of these common user related files that are not going to be useful to your collaborators or anybody who wants
+to contribute on github.
+<!-- 어떤 파일을 git add로 등록한 상태에서 파일을 수정하면 다시 수정한 파일내용을 git add해야한다
+그후 커밋해야 수정내용이 local repository에 적용된다 -->
+<!-- cloning github에 있는걸 내 컴퓨터에 복제하는방법 -->
+연습해보기
+1. github 에 open-source-ios-apps로 간다
+2. 2048 swift를 찾는다
+3. clone or download 에서 다운하고 언집 하던지 주소를 복사한다 내경우 주소를 복사하겠다.
+4. hyper terminal에서 경로 잡고 git clone 주소를 친다 git clone https://github.com/austinzheng/swift-2048.git 이런식으로
+5. swift-2048폴더에가서 git log를 하면 commit 정보?가 나온다.
+커밋했을때 각각을 버전1, 버전2 이라고 부른다 그 전체를 버전관리한다고 하고.
+
+<!-- branch 만들기 -->
+어떤 폴더에 가서 "git branch branch명 >> git branch alien-plot"
+가지고 있는 브렌치 조회 >> "git branch"
+맨앞에 * Asterix는 현재 내가 위치한 branch를 알려줌
+branch 경로 변경은  "git checkout alien-plot"
+branch 경로 변경 한상태에서 그 branch지점에서 chapter1, chapter2 파일 내용 수정하고 git add . , git commit -m "내용" 해준다
+그러면 alien-plot branch에서 chapter1.txt, chapter2 내용과 master branch에서 chapter1, chapter2내용이 다른걸 볼수있다
