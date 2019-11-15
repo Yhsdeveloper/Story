@@ -1,0 +1,36 @@
+[33mcommit 441fcf402357359b64c4820b41a19b141db49dcc[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 4b113b2 8230da3
+Author: unknown <yhsdevelop2551@gmail.com>
+Date:   Fri Nov 15 20:21:04 2019 +0900
+
+    master test merge
+
+[33mcommit 4b113b2a800f411809a8e8f9c0f78990f8d3277e[m
+Author: unknown <yhsdevelop2551@gmail.com>
+Date:   Fri Nov 15 20:13:04 2019 +0900
+
+    master branch chapter1~4 modification
+
+[33mcommit 8230da367b0f1ac79bbbe07b501cbacdbe0069e0[m[33m ([m[1;32mtest[m[33m)[m
+Author: unknown <yhsdevelop2551@gmail.com>
+Date:   Fri Nov 15 20:10:30 2019 +0900
+
+    test branch modify chapter1.txt and chapter2.txt
+
+[33mcommit 7d2e9f0ecd1a7a0c9927862e60bee105760bafd7[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: unknown <yhsdevelop2551@gmail.com>
+Date:   Fri Nov 15 19:45:21 2019 +0900
+
+    this is a chapter4
+
+[33mcommit 5ddbd7368f0ba45e0c8fc01bb971efbc12e08eaa[m
+Author: unknown <yhsdevelop2551@gmail.com>
+Date:   Thu Nov 14 15:33:15 2019 +0900
+
+    Complete Chapter 2 and 3
+
+[33mcommit e22a19c7a0ac4552264a543f33dc4616938cf25b[m
+Author: unknown <yhsdevelop2551@gmail.com>
+Date:   Thu Nov 14 15:21:17 2019 +0900
+
+    Complete Chapter 1

@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-master branch chapter1.txt
-=======
-test branch chapter1.txt
->>>>>>> test
+branchTest chapter1.txt
